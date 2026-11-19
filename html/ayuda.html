@@ -1,11 +1,70 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MateBeat · Ayuda</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    
+<body class="layout-app">
+  <!-- Barra lateral de navegación -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../assets/logo_m8beat.png" alt="Logo MateBeat">
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Menú principal">
+      <a href="../index.html" class="nav-link">Inicio / menú</a>
+      <a href="actividad.html" class="nav-link">Actividad</a>
+      <a href="perfil.html" class="nav-link">Perfil</a>
+      <a href="ayuda.html" class="nav-link activo">ayuda</a>
+    </nav>
+
+    <div class="sidebar-pie">
+      <a href="bienvenida.html" class="nav-link nav-salir">Cerrar sesión</a>
+    </div>
+  </aside>
+
+  <!-- Contenido principal de Ayuda -->
+  <main class="contenido-principal">
+    <header class="cabecera-inicio">
+      <h1>Centro de ayuda y contacto</h1>
+      <div class="buscador-box">
+        <input type="search" placeholder="¿Qué duda tienes sobre nosotros?" aria-label="¿Qué duda tienes sobre nosotros?">
+      </div>
+    </header>
+
+    <div class="grid-ayuda">
+      <!-- Columna izquierda: Preguntas más frecuentes -->
+      <section class="panel-faq" aria-labelledby="titulo-faq">
+        <h2 id="titulo-faq">Preguntas más frecuentes</h2>
+
+        <div class="lista-faq">
+          <div class="item-faq">¿Qué es MateBeat?</div>
+          <div class="item-faq">¿Cómo funcionan las recomendaciones y el feed principal?</div>
+          <div class="item-faq">¿Qué hago si una canción o artista no aparece en la app?</div>
+        </div>
+      </section>
+
+      <!-- Columna derecha: Formulario de contacto -->
+      <section class="tarjeta-contacto" aria-labelledby="titulo-contacto">
+        <h2 id="titulo-contacto">Formulario de contacto</h2>
+
+        <form class="formulario-contacto">
+          <div class="campo-grupo">
+            <label for="asunto-contacto">Asunto:</label>
+            <textarea id="asunto-contacto" name="asunto" rows="4" placeholder="Escribe aquí el asunto"></textarea>
+          </div>
+
+          <div class="campo-grupo">
+            <label for="mensaje-contacto">Mensaje:</label>
+            <textarea id="mensaje-contacto" name="mensaje" rows="4" placeholder="Escribe aquí el mensaje"></textarea>
+          </div>
+
+          <button type="button" class="btn btn-primario btn-ancho">Enviar mensaje</button>
+        </form>
+      </section>
+    </div>
+  </main>
 </body>
 </html>

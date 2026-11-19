@@ -1,3 +1,728 @@
-/*
-Creación de proyecto
-*/
+/* =========================================
+   1. TOKENS DE DISEÑO (Paleta Figma MateBeat)
+   ========================================= */
+:root {
+  --bg-principal: #23273d;
+  --bg-tarjeta: #3a324b;
+  --bg-sidebar: #1c2033;
+  --color-primario: #9b3588;
+  --color-primario-hover: #b3429e;
+  --borde-suave: #564a6d;
+  --texto-principal: #ffffff;
+  --texto-secundario: #c4bed1;
+  --radio-tarjeta: 16px;
+  --radio-pildora: 999px;
+}
+
+/* =========================================
+   2. RESET Y ESTILOS BASE
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-principal);
+  color: var(--texto-principal);
+  min-height: 100vh;
+}
+
+/* =========================================
+   3. PANTALLAS CENTRADAS (Bienvenida / Auth)
+   ========================================= */
+.pantalla-centrada {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+}
+
+.tarjeta-auth {
+  background-color: var(--bg-tarjeta);
+  border-radius: var(--radio-tarjeta);
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.logo-auth {
+  width: 150px;
+  height: auto;
+  margin-bottom: 1.25rem;
+}
+
+.tarjeta-auth h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 1.75rem;
+}
+
+.acciones-auth {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.btn {
+  flex: 1;
+  padding: 0.7rem 1.2rem;
+  border-radius: var(--radio-pildora);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.btn-primario {
+  background-color: var(--color-primario);
+  color: var(--texto-principal);
+  border: 1px solid var(--color-primario);
+}
+
+.btn-primario:hover {
+  background-color: var(--color-primario-hover);
+}
+
+.btn-secundario {
+  background-color: transparent;
+  color: var(--texto-secundario);
+  border: 1px solid var(--borde-suave);
+}
+
+.btn-secundario:hover {
+  border-color: var(--texto-principal);
+  color: var(--texto-principal);
+}
+
+.enlace-volver a {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+  text-decoration: underline;
+}
+
+.enlace-volver a:hover {
+  color: var(--texto-principal);
+}
+
+/* =========================================
+   4. FORMULARIOS DE REGISTRO / INICIO SESIÓN
+   ========================================= */
+.titulo-auth {
+  margin-bottom: 0.35rem;
+}
+
+.subtitulo-auth {
+  font-size: 0.9rem;
+  color: var(--texto-secundario);
+  margin-bottom: 1.5rem;
+}
+
+.formulario-auth {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+  text-align: left;
+}
+
+.campo-grupo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.campo-grupo label {
+  font-size: 0.85rem;
+  color: var(--texto-principal);
+  padding-left: 0.4rem;
+}
+
+.campo-grupo input {
+  background-color: var(--bg-principal);
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-pildora);
+  padding: 0.7rem 1.1rem;
+  color: var(--texto-principal);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.campo-grupo input::placeholder {
+  color: var(--texto-secundario);
+  opacity: 0.7;
+}
+
+.campo-grupo input:focus {
+  border-color: var(--color-primario-hover);
+}
+
+.btn-ancho {
+  flex: none;
+  width: 100%;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.pie-auth {
+  margin-top: 1.1rem;
+  font-size: 0.8rem;
+  color: var(--texto-principal);
+}
+
+.pie-auth a {
+  color: var(--texto-secundario);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.pie-auth a:hover {
+  color: var(--texto-principal);
+  text-decoration: underline;
+}
+
+/* =========================================
+   5. LAYOUT PRINCIPAL (Sidebar + Dashboard)
+   ========================================= */
+.layout-app {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.sidebar {
+  background-color: var(--bg-sidebar);
+  padding: 2rem 1.25rem;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  height: 100vh;
+}
+
+.sidebar-logo {
+  text-align: center;
+  margin-bottom: 2.25rem;
+}
+
+.sidebar-logo img {
+  width: 120px;
+  height: auto;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  flex: 1;
+}
+
+.nav-link {
+  display: block;
+  padding: 0.7rem 1.1rem;
+  border-radius: var(--radio-pildora);
+  color: var(--texto-principal);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: rgba(155, 53, 136, 0.25);
+}
+
+.nav-link.activo {
+  background-color: var(--color-primario);
+}
+
+.nav-salir {
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+}
+
+/* Contenido derecho */
+.contenido-principal {
+  padding: 1.5rem 2.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.cabecera-inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cabecera-inicio h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.buscador-box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: transparent;
+  border: 1px solid var(--borde-suave);
+  border-radius: 10px;
+  padding: 0.65rem 1rem;
+}
+
+.buscador-box input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: var(--texto-principal);
+  font-size: 0.9rem;
+  outline: none;
+}
+
+/* Grid central: Feed izquierda + Acceso rápido derecha */
+.grid-dashboard {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 1.5rem;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+}
+
+.panel-feed {
+  background-color: #3d2147;
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-tarjeta);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 0;
+}
+
+.titulo-panel {
+  font-size: 1.05rem;
+  color: var(--texto-secundario);
+  text-align: center;
+}
+
+.lista-recomendaciones {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 0.25rem;
+}
+
+/* Tarjetas generadas dinámicamente por JS */
+.tarjeta-musica {
+  background-color: rgba(28, 32, 51, 0.75);
+  border: 1px solid var(--borde-suave);
+  border-radius: 12px;
+  padding: 0.9rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: transform 0.15s ease, border-color 0.15s ease;
+}
+
+.tarjeta-musica:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primario-hover);
+}
+
+.tarjeta-musica h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+.tarjeta-musica p {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+}
+
+.badge-genero {
+  background-color: var(--color-primario);
+  color: var(--texto-principal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radio-pildora);
+  white-space: nowrap;
+}
+
+/* Acceso rápido (2x2) */
+.panel-acceso-rapido {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  min-height: 0;
+}
+
+.titulo-seccion-derecha {
+  font-size: 1.35rem;
+  font-weight: 700;
+}
+
+.grid-acceso {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.1rem;
+  flex: 1;
+}
+
+.caja-rapida {
+  background-color: #3d2147;
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-tarjeta);
+  padding: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.caja-rapida h3 {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.lista-mini {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.item-mini {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  font-size: 0.82rem;
+}
+
+.item-mini strong {
+  display: block;
+}
+
+.item-mini small {
+  color: var(--texto-secundario);
+  font-size: 0.75rem;
+}
+
+.avatar-mini,
+.nota-mini {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--color-primario);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.estadistica-diario {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: auto 0;
+}
+
+.dato-grande {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #e879d4;
+}
+
+.dato-sub,
+.dato-extra {
+  font-size: 0.82rem;
+  color: var(--texto-secundario);
+}
+
+.texto-backstage {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+  text-align: center;
+}
+
+.cita-backstage {
+  background-color: rgba(28, 32, 51, 0.6);
+  border-left: 3px solid var(--color-primario);
+  padding: 0.65rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+
+.cita-backstage footer {
+  margin-top: 0.35rem;
+  font-style: normal;
+  color: var(--texto-secundario);
+}
+
+/* =========================================
+   6. MODAL DE DETALLE
+   ========================================= */
+.modal-detalle {
+  margin: auto;
+  background-color: var(--bg-tarjeta);
+  color: var(--texto-principal);
+  border: 1px solid var(--color-primario-hover);
+  border-radius: var(--radio-tarjeta);
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
+
+.modal-detalle::backdrop {
+  background: rgba(15, 17, 29, 0.75);
+  backdrop-filter: blur(3px);
+}
+
+.detalle-cabecera {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-cerrar-modal {
+  background: transparent;
+  border: 1px solid var(--borde-suave);
+  color: var(--texto-principal);
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.detalle-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 1rem 0;
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+}
+
+.detalle-resena {
+  background-color: var(--bg-principal);
+  padding: 1rem;
+  border-radius: 10px;
+  line-height: 1.5;
+  font-size: 0.92rem;
+  margin-top: 0.75rem;
+}
+
+/* =========================================
+   7. PANTALLA DE PERFIL
+   ========================================= */
+.cabecera-perfil {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  gap: 2rem;
+}
+
+.perfil-identidad {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.avatar-perfil-aro {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 2px solid var(--color-primario-hover);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.avatar-perfil-interior {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background-color: var(--bg-tarjeta);
+  border: 2px solid var(--borde-suave);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.75rem;
+}
+
+.perfil-info h1 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.35rem;
+}
+
+.perfil-tabs {
+  font-size: 0.95rem;
+  color: #d8a7cf;
+  letter-spacing: 0.02em;
+}
+
+.perfil-contadores {
+  display: flex;
+  gap: 3rem;
+  padding-right: 40rem;
+}
+
+.contador-bloque {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.contador-bloque strong {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.contador-bloque span {
+  font-size: 0.85rem;
+  color: var(--texto-secundario);
+}
+
+.grid-perfil-columnas {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  flex: 1;
+  min-height: 0;
+}
+
+.grid-perfil-columnas .caja-rapida h2 {
+  font-size: 1.15rem;
+  text-align: center;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================
+   8. PANTALLA DE AYUDA Y CONTACTO
+   ========================================= */
+.grid-ayuda {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 3rem;
+  align-items: stretch;
+  flex: 1;
+  min-height: 0;
+  padding: 0.5rem 1rem 1rem;
+}
+
+.panel-faq {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.75rem;
+  width: 100%;
+}
+
+.panel-faq h2 {
+  font-size: 1.65rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.lista-faq {
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.item-faq {
+  background-color: #3d2147;
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-pildora);
+  padding: 1.45rem 2.25rem;
+  text-align: center;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--texto-principal);
+}
+
+.tarjeta-contacto {
+  background-color: #2f2c44;
+  border: 1px solid var(--borde-suave);
+  border-radius: var(--radio-tarjeta);
+  padding: 2rem 2.25rem;
+  width: 100%;
+  max-width: 560px;
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1.25rem;
+}
+
+.tarjeta-contacto h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.formulario-contacto {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 1.25rem;
+}
+
+.formulario-contacto .campo-grupo {
+  flex: 1;
+}
+
+.formulario-contacto textarea {
+  flex: 1;
+  background-color: var(--bg-principal);
+  border: 1px solid var(--borde-suave);
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  color: var(--texto-principal);
+  font-family: inherit;
+  font-size: 0.92rem;
+  resize: none;
+  outline: none;
+}
+
+.formulario-contacto textarea::placeholder {
+  color: var(--texto-secundario);
+  opacity: 0.75;
+}
+
+.formulario-contacto textarea:focus {
+  border-color: var(--color-primario-hover);
+}

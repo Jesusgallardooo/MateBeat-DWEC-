@@ -1,11 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MateBeat · Perfil</title>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
-<body>
-    
+<body class="layout-app">
+  <!-- Barra lateral de navegación -->
+  <aside class="sidebar">
+    <div class="sidebar-logo">
+      <img src="../assets/logo_m8beat.png" alt="Logo MateBeat">
+    </div>
+
+    <nav class="sidebar-nav" aria-label="Menú principal">
+      <a href="../index.html" class="nav-link">Inicio / menú</a>
+      <a href="actividad.html" class="nav-link">Actividad</a>
+      <a href="perfil.html" class="nav-link activo">Perfil</a>
+      <a href="ayuda.html" class="nav-link">Ayuda</a>
+    </nav>
+
+    <div class="sidebar-pie">
+      <a href="bienvenida.html" class="nav-link nav-salir">Cerrar sesión</a>
+    </div>
+  </aside>
+
+  <!-- Contenido principal del Perfil -->
+  <main class="contenido-principal">
+    <!-- Cabecera del perfil -->
+    <header class="cabecera-perfil">
+      <div class="perfil-identidad">
+        <div class="avatar-perfil-aro">
+          <div class="avatar-perfil-interior" aria-hidden="true">👤</div>
+        </div>
+
+        <div class="perfil-info">
+          <h1>[Nombre de usuario]</h1>
+          <p class="perfil-tabs">
+            <span>Playlists</span> | <span>Artistas</span> | <span>Diario</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="perfil-contadores">
+        <div class="contador-bloque">
+          <strong>148</strong>
+          <span>seguidores</span>
+        </div>
+        <div class="contador-bloque">
+          <strong>3</strong>
+          <span>playlists</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Grid inferior de 3 columnas -->
+    <section class="grid-perfil-columnas" aria-label="Resumen del usuario">
+      <article class="caja-rapida">
+        <h2>Playlists<br>más escuchadas</h2>
+      </article>
+
+      <article class="caja-rapida">
+        <h2>artistas<br>favoritos</h2>
+      </article>
+
+      <article class="caja-rapida">
+        <h2>último<br>resumen semanal</h2>
+      </article>
+    </section>
+  </main>
 </body>
 </html>

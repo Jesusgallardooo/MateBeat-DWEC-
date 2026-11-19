@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+    <title>MateBeat · Crear cuenta</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    </head>
+    <body class="pantalla-centrada">
+    <main class="tarjeta-auth">
+        <img src="../assets/logo_m8beat.png" alt="Logo MateBeat - Música y Amigos" class="logo-auth">
+        
+        <h1 class="titulo-auth">Crear cuenta</h1>
+        <p class="subtitulo-auth">Únete a MateBeat para compartir tu música.</p>
+
+        <form action="../index.html" class="formulario-auth">
+        <div class="campo-grupo">
+            <label for="email-registro">Email/usuario</label>
+            <input type="text" id="email-registro" name="email" placeholder="tucorreo@gmail.com">
+        </div>
+
+        <div class="campo-grupo">
+            <label for="password-registro">Contraseña</label>
+            <input type="password" id="password-registro" name="password" placeholder="••••••••••••">
+        </div>
+
+        <button type="submit" class="btn btn-primario btn-ancho">¡Vamos!</button>
+        </form>
+
+        <p class="pie-auth">
+        ¿Ya tienes cuenta? <a href="inicioDeSesion.html">Inicia sesión</a>
+        </p>
+    </main>
 </body>
 </html>

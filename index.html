@@ -1,11 +1,140 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+    <title>MateBeat · Inicio</title>
+    <link rel="stylesheet" href="css/styles.css">
+    </head>
+    <body class="layout-app">
+    <!-- Barra lateral de navegación -->
+    <aside class="sidebar">
+        <div class="sidebar-logo">
+        <img src="assets/logo_m8beat.png" alt="Logo MateBeat">
+        </div>
+
+        <nav class="sidebar-nav" aria-label="Menú principal">
+        <a href="index.html" class="nav-link activo">Inicio / menú</a>
+        <a href="html/actividad.html" class="nav-link">Actividad</a>
+        <a href="html/perfil.html" class="nav-link">Perfil</a>
+        <a href="html/ayuda.html" class="nav-link">Ayuda</a>
+        </nav>
+
+        <div class="sidebar-pie">
+        <a href="html/bienvenida.html" class="nav-link nav-salir">Cerrar sesión</a>
+        </div>
+    </aside>
+
+    <!-- Contenido principal -->
+    <main class="contenido-principal">
+        <header class="cabecera-inicio">
+        <h1>¡Hola, Jesus!</h1>
+        <div class="buscador-box">
+            <span class="icono-buscar" aria-hidden="true">🔍</span>
+            <input type="search" placeholder="Buscar canción, artista o amigo..." aria-label="Buscar canción, artista o amigo">
+        </div>
+        </header>
+
+        <div class="grid-dashboard">
+        <!-- Columna izquierda: Listado principal generado desde JS -->
+        <section class="panel-feed" aria-labelledby="titulo-feed">
+            <h2 id="titulo-feed" class="titulo-panel">Música e interacciones para ti</h2>
+            <div id="listado-musica" class="lista-recomendaciones">
+            <!-- ui.js inyectará aquí las tarjetas desde datos.js -->
+            </div>
+        </section>
+
+        <!-- Columna derecha: Acceso rápido (2x2) -->
+        <section class="panel-acceso-rapido" aria-labelledby="titulo-acceso">
+            <h2 id="titulo-acceso" class="titulo-seccion-derecha">Acceso rápido</h2>
+
+            <div class="grid-acceso">
+            <!-- Tarjeta 1: Amigos -->
+            <article class="caja-rapida">
+                <h3>Amigos</h3>
+                <ul class="lista-mini">
+                <li class="item-mini">
+                    <span class="avatar-mini">LC</span>
+                    <div>
+                    <strong>@laura_indie</strong>
+                    <small>Escuchando: Arctic Monkeys</small>
+                    </div>
+                </li>
+                <li class="item-mini">
+                    <span class="avatar-mini">CM</span>
+                    <div>
+                    <strong>@carlos_beats</strong>
+                    <small>Creó playlist "Noche Synth"</small>
+                    </div>
+                </li>
+                <li class="item-mini">
+                    <span class="avatar-mini">SR</span>
+                    <div>
+                    <strong>@sofia_rock</strong>
+                    <small>En línea · Hace 5 min</small>
+                    </div>
+                </li>
+                </ul>
+            </article>
+
+            <!-- Tarjeta 2: Reproducciones recientes -->
+            <article class="caja-rapida">
+                <h3>Reproducciones recientes</h3>
+                <ul class="lista-mini">
+                <li class="item-mini">
+                    <span class="nota-mini">🎵</span>
+                    <div>
+                    <strong>Midnight City</strong>
+                    <small>M83 · 4:03</small>
+                    </div>
+                </li>
+                <li class="item-mini">
+                    <span class="nota-mini">🎵</span>
+                    <div>
+                    <strong>The Less I Know The Better</strong>
+                    <small>Tame Impala · 3:36</small>
+                    </div>
+                </li>
+                <li class="item-mini">
+                    <span class="nota-mini">🎵</span>
+                    <div>
+                    <strong>Starboy</strong>
+                    <small>The Weeknd · 3:50</small>
+                    </div>
+                </li>
+                </ul>
+            </article>
+
+            <!-- Tarjeta 3: Diario de escucha -->
+            <article class="caja-rapida">
+                <h3>Diario de escucha</h3>
+                <div class="estadistica-diario">
+                <p class="dato-grande">14 h 20 m</p>
+                <p class="dato-sub">Escuchadas esta semana</p>
+                <p class="dato-extra">Género top: <strong>Synthwave</strong></p>
+                <p class="dato-extra">Playlist activa: <strong>Coding Flow 2026</strong></p>
+                </div>
+            </article>
+
+            <!-- Tarjeta 4: BackStage -->
+            <article class="caja-rapida">
+                <h3>BackStage</h3>
+                <p class="texto-backstage">Echa un vistazo a las opiniones de los oyentes</p>
+                <blockquote class="cita-backstage">
+                "El nuevo álbum de Daft Punk sigue sonando adelantado a su tiempo."
+                <footer>— @alex_sound</footer>
+                </blockquote>
+            </article>
+            </div>
+        </section>
+        </div>
+    </main>
+
+    <!-- Modal nativo para la vista de detalle al pulsar un elemento del listado -->
+    <dialog id="modal-detalle" class="modal-detalle">
+        <div id="contenido-detalle"></div>
+    </dialog>
+
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
