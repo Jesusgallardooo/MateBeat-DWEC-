@@ -6,7 +6,9 @@ export const generosMusicales = [
     {id:5, nombre:"Urbana/Reguetón"},
     {id:6, nombre:"Flamenco"},
     {id:7, nombre:"Country"},
-    {id:8, nombre:"Lo-fi"}
+    {id:8, nombre:"Lo-fi"},
+    {id:9, nombre:"Clásica"},
+    {id:10, nombre:"R&B"},
 ]
 
 export const playlists = [
